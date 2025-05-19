@@ -1,0 +1,154 @@
+Request method:	POST
+Request URI:	http://13.232.150.129:4022/ecms_portal/enterpriseInvite/v1/createUserCard
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-Auth-Token=49c0vkXgJXhN1ppyFJAqnN6A3YQvjSvoR7nEVk40122LAIHqRm1dbbMlWTK1lorLX1XA7ZFVlHmLHQD1MM62QpmaRkA5okh3VQ7wYwn3Eon/2b+2mkLGJToAXeVI5XXXtd5z+QLf7zsTS/ReUNza/nGDm87f3DQdUG2Y8q2sZ25oKFMPD2wNG//IyhN/pUI8vvAFBQmJejPyWzQrk9X4Zw==
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "isVirtualCard": true,
+    "aliasName": "",
+    "empID": "Emp",
+    "employeeCategoryId": "GRP1502D66FA06441589E59EEDF887C0907",
+    "firstName": "Ranu",
+    "lastName": "test",
+    "isPhysicalCard": false,
+    "mobileNumber": "8291821920",
+    "locationId": "",
+    "emailId": null,
+    "storeId": 1,
+    "employeeCategoryName": "Sales"
+}
+HTTP/1.1 403 
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+Transfer-Encoding: chunked
+Date: Mon, 19 May 2025 10:19:34 GMT
+Keep-Alive: timeout=20
+Connection: keep-alive
+Server: 
+
+{"data":[],"message":"Access token is Exipred.","status":403}
+Request method:	POST
+Request URI:	http://13.232.150.129:4022/ecms_portal/enterprise/v1/fetchVirAccDetails
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-Auth-Token=49c0vkXgJXhN1ppyFJAqnN6A3YQvjSvoR7nEVk40122LAIHqRm1dbbMlWTK1lorLX1XA7ZFVlHmLHQD1MM62QpmaRkA5okh3VQ7wYwn3Eon/2b+2mkLGJToAXeVI5XXXtd5z+QLf7zsTS/ReUNza/nGDm87f3DQdUG2Y8q2sZ25oKFMPD2wNG//IyhN/pUI8vvAFBQmJejPyWzQrk9X4Zw==
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+HTTP/1.1 403 
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+Transfer-Encoding: chunked
+Date: Mon, 19 May 2025 10:19:34 GMT
+Keep-Alive: timeout=20
+Connection: keep-alive
+Server: 
+
+{"data":[],"message":"Access token is Exipred.","status":403}
+Request method:	POST
+Request URI:	http://13.232.150.129:4022/ecms_portal/team/members/getAllTeamMembersTB
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-Auth-Token=49c0vkXgJXhN1ppyFJAqnN6A3YQvjSvoR7nEVk40122LAIHqRm1dbbMlWTK1lorLX1XA7ZFVlHmLHQD1MM62QpmaRkA5okh3VQ7wYwn3Eon/2b+2mkLGJToAXeVI5XXXtd5z+QLf7zsTS/ReUNza/nGDm87f3DQdUG2Y8q2sZ25oKFMPD2wNG//IyhN/pUI8vvAFBQmJejPyWzQrk9X4Zw==
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "pageSize": 10,
+    "mobileNumber": null,
+    "empId": null,
+    "endDate": null,
+    "firstName": null,
+    "groupId": "GRP07BD6F6578D24492B2EB8B58445085C9",
+    "searchParam": null,
+    "startDate": null,
+    "storeId": "STACF1F77E3495F34F8398BA62C05CC26FFD",
+    "pageNo": 1
+}
+HTTP/1.1 403 
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+Transfer-Encoding: chunked
+Date: Mon, 19 May 2025 10:19:34 GMT
+Keep-Alive: timeout=20
+Connection: keep-alive
+Server: 
+
+{"data":[],"message":"Access token is Exipred.","status":403}
+Request method:	POST
+Request URI:	http://13.232.150.129:4022/ecms_portal/team/members/getAllTeamMembersTB
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-Auth-Token=49c0vkXgJXhN1ppyFJAqnN6A3YQvjSvoR7nEVk40122LAIHqRm1dbbMlWTK1lorLX1XA7ZFVlHmLHQD1MM62QpmaRkA5okh3VQ7wYwn3Eon/2b+2mkLGJToAXeVI5XXXtd5z+QLf7zsTS/ReUNza/nGDm87f3DQdUG2Y8q2sZ25oKFMPD2wNG//IyhN/pUI8vvAFBQmJejPyWzQrk9X4Zw==
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "pageSize": 10,
+    "mobileNumber": null,
+    "empId": null,
+    "endDate": null,
+    "firstName": null,
+    "groupId": "GRP07BD6F6578D24492B2EB8B58445085C9",
+    "searchParam": null,
+    "startDate": null,
+    "storeId": "STACF1F77E3495F34F8398BA62C05CC26FFD",
+    "pageNo": 1
+}
+HTTP/1.1 403 
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+Transfer-Encoding: chunked
+Date: Mon, 19 May 2025 10:19:34 GMT
+Keep-Alive: timeout=20
+Connection: keep-alive
+Server: 
+
+{"data":[],"message":"Access token is Exipred.","status":403}

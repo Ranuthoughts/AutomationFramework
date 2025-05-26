@@ -20,7 +20,7 @@ public class Litebitereport {
 
 		// getting total number of sheets
 		int sheets = wb.getNumberOfSheets();
-		System.out.println("Total no of sheets of test : " + sheets);
+		System.out.println("Total no of sheets : " + sheets);
 		for (int i = 0; i < sheets; i++) {
 			if (wb.getSheetName(i).equalsIgnoreCase(sheetname)) {
 				XSSFSheet sheet = wb.getSheetAt(i);

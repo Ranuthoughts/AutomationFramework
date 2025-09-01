@@ -26,7 +26,8 @@ public class StepDefination extends Utilities {
 	public void email_id_and_password() throws IOException {
 
 		virtualrequest = given().spec(requestspecification()).log().all()
-				.header("X-Auth-Token", getGlobalValues("Token")).body("");
+				.header("X-Auth-Token", getGlobalValues("Token")).header("Origin", "http://demoecms.s3-website.ap-south-1.amazonaws.com")
+				.body("");
 
 //		response = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
 	}

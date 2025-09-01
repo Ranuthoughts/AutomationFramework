@@ -47,7 +47,8 @@ public class AddMember extends Utilities {
 		jsonAsMap.put("emailId", null);
 
 		addmemberrequest = given().spec(requestspecification()).log().all()
-				.header("X-Auth-Token", getGlobalValues("Token")).body(jsonAsMap);
+				.header("X-Auth-Token", getGlobalValues("Token")).header("Origin","http://demoecms.s3-website.ap-south-1.amazonaws.com")
+				.body(jsonAsMap);
 
 	}
 

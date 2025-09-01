@@ -13,6 +13,7 @@ import static io.restassured.RestAssured.*;
 import static org.testng.Assert.assertEquals;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -20,7 +21,9 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import DBVerification.Teammembercount;
 import Resources.APIResources;
+import Resources.DBUtils;
 import Resources.TestDatabuild;
 import Resources.Utilities;
 
@@ -38,6 +41,7 @@ public class TeamsStepDefinition extends Utilities {
 	public void click_on_team_member_using_filter() throws JsonProcessingException, IOException {
 		teamsrequest teamsreq = new teamsrequest();
 		teamsrequest = given().spec(requestspecification()).log().all().header("X-Auth-Token", getGlobalValues("Token"))
+				.header("Origin", "http://demoecms.s3-website.ap-south-1.amazonaws.com")
 				.body(TestDatabuild.teamspayload());
 	}
 
@@ -49,13 +53,13 @@ public class TeamsStepDefinition extends Utilities {
 
 		JsonPath js = new JsonPath(teamsresponse);
 		String getStatus = js.get("status");
-		System.out.println(getStatus);
+		System.out.println(getStatus);  
 
 	}
 
 	@Then("Find the count of active and inactvive teammembers using {string} API.")
 	public void find_the_count_of_active_and_inactvive_teammembers_using_api(String resource)
-			throws JsonMappingException, com.fasterxml.jackson.core.JsonProcessingException {
+			throws JsonMappingException, com.fasterxml.jackson.core.JsonProcessingException, SQLException {
 		
 		teamsresponse = teamsrequest.when().post("/ecms_portal/team/members/getAllTeamMembersTB").then().log().all()
 				.spec(responseSpecification()).extract().response().asString();
@@ -75,19 +79,37 @@ public class TeamsStepDefinition extends Utilities {
 		int totalCount = (int) objectmapper.convertValue(extractteams.resultObj.get(1), Integer.class);
 		String teammemberstatus = objectmapper.convertValue(extractteams.resultObj.get(1), String.class);
 
-		System.out.println("======= RAW API RESPONSE START =======");
+//		System.out.println("======= RAW API RESPONSE START =======");
 		System.out.println("Total team members from API: " + totalCount);
 		System.out.println("Parsed team members list size: " + teamMembers.size());
-		long activeCount = teamMembers.stream().filter(member -> "ACTIVE".equalsIgnoreCase(member.status)).count();
+		long activeCountfromAPI = teamMembers.stream().filter(member -> "ACTIVE".equalsIgnoreCase(member.status)).count();
 //        assertEquals(activeCount , "1");
 
-		long inactiveCount = teamMembers.stream().filter(member -> !"ACTIVE".equalsIgnoreCase(member.status)).count();
+		// Extracting from API
+		long InvitedCountfromAPI = teamMembers.stream().filter(member -> !"ACTIVE".equalsIgnoreCase(member.status)).count();
 
-		System.out.println("Active members count: " + activeCount);
-		System.out.println("Inactive members count: " + inactiveCount);
-		assertEquals(inactiveCount, 1);
+		System.out.println("Active members count API: " + activeCountfromAPI);
+		System.out.println("Invited members count API: " + InvitedCountfromAPI);
+		assertEquals(InvitedCountfromAPI, 18);
+		
+		// Extracting from DB
+		int activeCountFromDB = Teammembercount.getTeammembercountbystatus("ACTIVE", "ENTPDB9409DAF8F24766997A5E8812308871");
+	    int invitedCountFromDB = Teammembercount.getTeammembercountbystatus("INVITED", "ENTPDB9409DAF8F24766997A5E8812308871");
+	    
+	    // Assert API vs db
+	    System.out.println("API Active: " + activeCountfromAPI + ", DB Active: " + activeCountFromDB);
+	    System.out.println("API Inactive: " + InvitedCountfromAPI + ", DB Inactive: " + invitedCountFromDB);
+	    
+	    
+	    assertEquals(activeCountfromAPI, activeCountFromDB, "Mismatch in ACTIVE member count!") ;
+	    assertEquals(invitedCountFromDB, InvitedCountfromAPI, "Mismatch in INACTIVE member count!");
+	   
+        
+	   
+	    
+	    
 
-		System.out.println("======= RAW API RESPONSE END =======");
+//		System.out.println("======= RAW API RESPONSE END =======");
 
 	}
 

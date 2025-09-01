@@ -14,7 +14,7 @@ Then Data should be filtered according to the selected filter
 @TeamMember
 Scenario: Find the ACTIVE & INACTIVE Teammembers
 Given User successfully login on the portal
-When Click on Team Member using filter
+When  Click on Team Member using filter
 Then Find the count of active and inactvive teammembers using "getallteammembersTB" API.
 
  

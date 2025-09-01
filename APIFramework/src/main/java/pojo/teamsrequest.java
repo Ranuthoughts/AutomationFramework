@@ -18,7 +18,7 @@ public class teamsrequest {
 	}
 
 	public void setPageNo(int pageNo) {
-		this.pageNo =  pageNo;
+		this.pageNo =  pageNo; 
 	}
 
 	public int getPageSize() {

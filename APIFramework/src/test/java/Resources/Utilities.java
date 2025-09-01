@@ -45,7 +45,7 @@ public class Utilities {
 	public static String getGlobalValues(String key) throws IOException {
 		Properties prop = new Properties();
 		FileInputStream fis = new FileInputStream(
-				"D:\\ECMS\\APIFramework\\src\\test\\java\\Resources\\Global.properties");
+				"D:\\ECMS\\GITSTUFF\\APIFramework\\src\\test\\java\\Resources\\Global.properties");
 		prop.load(fis);
 		return prop.getProperty(key);
 
